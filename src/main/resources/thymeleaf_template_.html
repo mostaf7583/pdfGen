@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Contract Information</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f9f9f9;
+		}
+
+		h1 {
+			text-align: center;
+			color: #333;
+			margin-top: 20px;
+		}
+
+		table {
+			margin: 20px auto;
+			border-collapse: collapse;
+			width: 90%;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+		}
+
+		th,
+		td {
+			padding: 12px;
+			border: 1px solid #ddd;
+			text-align: left;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		tr:hover {
+			background-color: #ddd;
+		}
+
+		td {
+			color: #555;
+		}
+		.logo {
+            height: 50px; /* Adjust height as needed */
+            width: auto; /* Maintain aspect ratio */
+        }
+	</style>
+</head>
+<header>
+	<img src="https://raw.githubusercontent.com/mostaf7583/myapp/main/images.png" class="Logo">
+	</img>
+	<span>Contract Information</span>
+</header>
+
+<body>
+	<h1>Contract Information</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Id</th>
+				<th>Address</th>
+				<th>Company</th>
+				<th>Employment Contract</th>
+				<th>Total Income</th>
+				<th>Car Price</th>
+				<th>Car Type</th>
+				<th>Next</th>
+				<th>Statement Number</th>
+				<th>Invoice Number</th>
+				<th>Purchase Agreement</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Iterate over the data list to create multiple rows -->
+			<tr th:each="row : ${data}">
+				<td th:text="${row.Name}">John Doe</td>
+				<td th:text="${row.Id}">12345</td>
+				<td th:text="${row.Address}">123 Elm Street</td>
+				<td th:text="${row.Company}">Tech Corp</td>
+				<td th:text="${row.employmentContract}">Contract123</td>
+				<td th:text="${row.Total_income}">50000</td>
+				<td th:text="${row.Car_price}">20000</td>
+				<td th:text="${row.Car_type}">Sedan</td>
+				<td th:text="${row.Next}">2025</td>
+				<td th:text="${row.Statement_number}">67890</td>
+				<td th:text="${row.Invoice_number}">INV123</td>
+				<td th:text="${row.Purchase_agreement}">Agreement456</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
